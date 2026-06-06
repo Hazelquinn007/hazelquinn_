@@ -6,14 +6,23 @@
     <title>Hazel Quinn</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: #000; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 20px 0; }
-        .container { width: 100%; max-width: 450px; margin: 0 auto; text-align: center; padding: 0 15px; }
-        .profile-img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; margin-top: 10px; }
-        h1 { font-size: 24px; margin: 15px 0 5px; font-weight: 700; }
-        .bio { font-size: 14px; color: #aaa; margin-bottom: 20px; }
-        .socials { display: flex; justify-content: center; gap: 12px; margin-bottom: 25px; }
+        body { background-color: #000; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding-bottom: 30px; }
+        .container { width: 100%; max-width: 450px; margin: 0 auto; text-align: center; }
+        
+        /* Full-width header image section matching 86908.jpg */
+        .header-wrapper { width: 100%; position: relative; height: 380px; overflow: hidden; }
+        .profile-img { width: 100%; height: 100%; object-fit: cover; }
+        .header-fade { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent 60%, #000 100%); }
+        
+        /* Content layout shifting down into the fade */
+        .content-box { position: relative; margin-top: -60px; padding: 0 15px; z-index: 5; }
+        h1 { font-size: 28px; margin-bottom: 15px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+        .socials { display: flex; justify-content: center; gap: 12px; margin-bottom: 15px; }
         .socials img { width: 40px; height: 40px; border-radius: 50%; transition: transform 0.2s; }
         .socials img:hover { transform: scale(1.05); }
+        .bio { font-size: 14px; color: #aaa; margin-bottom: 25px; }
+        
+        /* Card styling with white frames */
         .links-container { display: flex; flex-direction: column; gap: 15px; }
         .card { display: flex; align-items: flex-end; justify-content: center; width: 100%; text-decoration: none; color: #fff; border-radius: 24px; overflow: hidden; position: relative; background-size: cover; background-position: center; transition: transform 0.2s; border: 1px solid rgba(255, 255, 255, 0.4); }
         .card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); }
@@ -26,33 +35,41 @@
 <body>
 
     <div class="container">
-        <img src="bg.jpg" class="profile-img" alt="Profile">
-        <h1>Hazel Quinn</h1>
-        <p class="bio">Your new Favorite Girl💜</p>
-
-        <div class="socials">
-            <a href="https://t.me/yourhazelquinn00"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="TG"></a>
-            <a href="https://www.instagram.com/itshazel_quinn_?igsh=M2MxeTQ1cm8pNWhs="><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@itshazel_quinn_7_?_r=1&_t=ZS-9BzSVV7CJJj"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046124.png" alt="TikTok"></a>
+        <!-- New full-width top layout -->
+        <div class="header-wrapper">
+            <img src="bg.jpg" class="profile-img" alt="Profile">
+            <div class="header-fade"></div>
         </div>
 
-        <div class="links-container">
-            <a href="https://t.me/yourhazelquinn00" class="card large" style="background-image: url('card2.jpg');">
-                <span>Message me 🤭</span>
-            </a>
+        <div class="content-box">
+            <h1>Hazel Quinn</h1>
 
-            <div class="row-grid">
-                <a href="https://www.instagram.com/itshazel_quinn_?igsh=M2MxeTQ1cm8pNWhs=" class="card small" style="background-image: url('insta.jpg');">
-                    <span>Instagram 📸</span>
-                </a>
-                <a href="https://www.tiktok.com/@itshazel_quinn_7_?_r=1&_t=ZS-9BzSVV7CJJj" class="card small" style="background-image: url('card3.jpg');">
-                    <span>My Secret TikTok 🤫</span>
-                </a>
+            <div class="socials">
+                <a href="https://t.me/yourhazelquinn00"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="TG"></a>
+                <a href="https://www.instagram.com/itshazel_quinn_?igsh=M2MxeTQ1cm8pNWhs="><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@itshazel_quinn_7_?_r=1&_t=ZS-9BzSVV7CJJj"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046124.png" alt="TikTok"></a>
             </div>
 
-            <a href="https://t.me/yourhazelquinn" class="card large" style="background-image: url('card4.jpg');">
-                <span>Join My Free Telegram Group 😈</span>
-            </a>
+            <p class="bio">Your new Favorite Girl💜</p>
+
+            <div class="links-container">
+                <a href="https://t.me/yourhazelquinn00" class="card large" style="background-image: url('card2.jpg');">
+                    <span>Message me 💬</span>
+                </a>
+
+                <div class="row-grid">
+                    <a href="https://www.instagram.com/itshazel_quinn_?igsh=M2MxeTQ1cm8pNWhs=" class="card small" style="background-image: url('insta.jpg');">
+                        <span>Instagram 📸</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@itshazel_quinn_7_?_r=1&_t=ZS-9BzSVV7CJJj" class="card small" style="background-image: url('card3.jpg');">
+                        <span>My Secret TikTok 🤫</span>
+                    </a>
+                </div>
+
+                <a href="https://t.me/yourhazelquinn" class="card large" style="background-image: url('card4.jpg');">
+                    <span>Join My Free Telegram Group 😈</span>
+                </a>
+            </div>
         </div>
     </div>
 
